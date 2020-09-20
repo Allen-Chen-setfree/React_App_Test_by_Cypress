@@ -8,7 +8,7 @@ export const Factorial = () => {
         <Layout pageId="factorial">
             <div>                
                 <label htmlFor="factorial_input">Input a number to calculate its factorial</label><br />
-                <input type="number" id="factorial_input" placeholder="0~10"
+                <input type="number" id="factorial_input" placeholder="1~10"
                     onChange={event => setValue(event.target.value)} />
                 <Calculate pageId="factorial" inputNum={value}></Calculate>
             </div>

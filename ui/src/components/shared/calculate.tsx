@@ -43,7 +43,7 @@ class Calculate extends Component<IProps, IState> {
         return (
             <>
                 <br/><button onClick={this.clickHandler}>Calculate</button>             
-                <br/><b>{this.state.result}</b>          
+                <br /><div id="result"><b>{this.state.result}</b></div>          
             </>
             )
     }

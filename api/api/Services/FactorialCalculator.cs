@@ -14,7 +14,7 @@ namespace api.Services
         {
             var x = 1;
             while (n != 1) x *= n--;
-            return n;
+            return x;
         }
     }
 }

@@ -23,9 +23,7 @@ class Calculate extends Component<IProps, IState> {
 
 
     clickHandler = () => {
-        console.log(this.props.inputNum)
         if ((this.props.inputNum === "-1") || (this.props.inputNum === "")) {
-            console.log("test")
             this.setState({ result: "Not Support" })
         } else {
         axios.get('/api/math/' + this.props.pageId + '/' + this.props.inputNum)

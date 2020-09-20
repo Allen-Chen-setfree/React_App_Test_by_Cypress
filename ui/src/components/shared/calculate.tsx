@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-
 interface IProps {
     pageId?: string;
     inputNum?: string;
@@ -24,17 +23,20 @@ class Calculate extends Component<IProps, IState> {
 
 
     clickHandler = () => {
-
+        console.log(this.props.inputNum)
+        if ((this.props.inputNum === "-1") || (this.props.inputNum === "")) {
+            console.log("test")
+            this.setState({ result: "Not Support" })
+        } else {
         axios.get('/api/math/' + this.props.pageId + '/' + this.props.inputNum)
             .then(response => {
                this.setState({ result: response.data.result });
-                console.log(response.data.result);
-
             })
-            .catch(error => {
-                this.setState({ errorMsg:"error retrieving data" });
-            })
-
+            .catch(() => {
+                this.setState({ result: "Not Support" });
+            }) 
+        }
+        
     }
 
 

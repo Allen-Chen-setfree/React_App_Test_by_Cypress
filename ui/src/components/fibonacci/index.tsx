@@ -7,9 +7,9 @@ export const Fibonacci = () => {
     return (
         <Layout pageId="fibonacci">
             <div>
-                <label htmlFor="fibonacci_input">Input a number to calculate its fibonacci</label><br />
-                <input type="number" id="fibonacci_input" placeholder="0~10"
-                    onChange={event => setValue(event.target.value)} />
+                <label htmlFor="fibonacci_input">Input a number to calculate its fibonacci</label><br/>
+                <input type="text" pattern="[0-9]|10" id="fibonacci_input" placeholder="0~10"
+                    onChange={evt => evt.target.validity.valid ? setValue(evt.target.value) : setValue('-1')} />
                 <Calculate pageId="fibonacci" inputNum={value}></Calculate>
             </div>
             <p>

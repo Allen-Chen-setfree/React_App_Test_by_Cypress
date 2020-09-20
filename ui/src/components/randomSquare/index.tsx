@@ -7,9 +7,9 @@ export const RandomSquare = () => {
     return (
         <Layout pageId="randomSquare">
             <div>
-                <label htmlFor="randomSquare_input">Input a number to calculate square of a random smaller Integer</label><br />
-                <input type="number" id="randomSquare_input"
-                    onChange={event => setValue(event.target.value)} />
+                <label htmlFor="randomSquare_input">Input a positive number to calculate square of a random smaller Integer</label><br />
+                <input type="text" pattern="[1-9][0-9]*" id="randomSquare_input"
+                    onChange={evt => evt.target.validity.valid ? setValue(evt.target.value) : setValue('-1')} />
                 <Calculate pageId="random-Square" inputNum={value}></Calculate>
             </div>
             <p>

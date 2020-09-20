@@ -16,9 +16,14 @@ describe('Test Factorial Page', () => {
         cy.get('div[id="result"]').should('have.value', '')
         cy.get('p').contains('User inputs a number (n) in a textbox, then clicks a button to calculate n! via a corresponding API call. Then the correct result is displayed on the page.')
 
+
         cy.get('input[id="factorial_input"]').type(1).should('have.value', '1')
         cy.get('button').contains('Calculate').click()
         cy.get('div[id="result"]').contains('1')
+
+        cy.get('input[id="factorial_input"]').clear().type(0).should('have.value', '0')
+        cy.get('button').contains('Calculate').click()
+        cy.get('div[id="result"]').contains('Not Support')
 
     })
 }

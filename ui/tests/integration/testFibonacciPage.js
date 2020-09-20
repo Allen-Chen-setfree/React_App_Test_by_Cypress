@@ -20,6 +20,10 @@ describe('Test Fibonacci Page', () => {
         cy.get('button').contains('Calculate').click()
         cy.get('div[id="result"]').contains('0')
 
+        cy.get('input[id="fibonacci_input"]').clear().type(11).should('have.value', '11')
+        cy.get('button').contains('Calculate').click()
+        cy.get('div[id="result"]').contains('Not Support')
+
     })
 
 })

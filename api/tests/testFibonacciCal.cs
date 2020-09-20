@@ -32,10 +32,12 @@ namespace api.tests
 
         
         [Test]
-        public void Test_equal_greater_than_10()
+        [TestCase(testDate)]
+        [TestCase(-1)]
+        public void Test_equal_greater_than_10_or_less_than_0(int input)
         {
-            var err = Assert.Throws<NotSupportedException>(() => fibonacciCalculator.Calculate(testDate));
-            Assert.That( err.Message, Is.EqualTo($"n > {testDate-1} is not supported") );
+            var err = Assert.Throws<NotSupportedException>(() => fibonacciCalculator.Calculate(input));
+            Assert.That( err.Message, Is.EqualTo($"n > {testDate-1} or n < 0 is not supported") );
         }
   
     }

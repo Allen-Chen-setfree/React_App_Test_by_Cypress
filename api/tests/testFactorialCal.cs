@@ -29,10 +29,12 @@ namespace api.tests
         }
 
         [Test]
-        public void Test_equal_greater_than_10()
+        [TestCase(testDate)]
+        [TestCase(0)]
+        public void Test_equal_greater_than_10_or_equal_less_than_0(int input)
         {
-            var err = Assert.Throws<NotSupportedException>( () => factorialCalculator.Calculate(testDate));
-            Assert.That( err.Message, Is.EqualTo($"n > {testDate-1} is not supported") );
+            var err = Assert.Throws<NotSupportedException>( () => factorialCalculator.Calculate(input));
+            Assert.That( err.Message, Is.EqualTo($"n > {testDate-1} or n <= 0 is not supported") );
         }
 
     }

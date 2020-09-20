@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Layout } from '../shared/layout';
+import Calculate from '../shared/calculate'
 
 export const RandomSquare = () => {
+    const [value, setValue] = useState('')
     return (
         <Layout pageId="randomSquare">
             <p>
-                TODO: Calculate random square (i.e. rand(0, n)^2), where random number is between 0 and n.
+                <label htmlFor="randomSquare_input">Input a number to calculate square of a random smaller Integer</label><br />
+                <input type="number" id="randomSquare_input"
+                    onChange={event => setValue(event.target.value)} />
+                <Calculate pageId="random-Square" inputNum={value}></Calculate>
             </p>
             <p>
                 User inputs a number (n) in a textbox, then clicks a button to calculate Fib(n) via a corresponding API call.

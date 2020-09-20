@@ -6,12 +6,12 @@ export const Factorial = () => {
     const [value, setValue] = useState('')
     return (
         <Layout pageId="factorial">
-            <p>                
+            <div>                
                 <label htmlFor="factorial_input">Input a number to calculate its factorial</label><br />
                 <input type="number" id="factorial_input" placeholder="0~10"
                     onChange={event => setValue(event.target.value)} />
                 <Calculate pageId="factorial" inputNum={value}></Calculate>
-            </p>
+            </div>
             <p>
                 User inputs a number (n) in a textbox, then clicks a button to calculate n! via a corresponding API call.
                 Then the correct result is displayed on the page.

@@ -10,7 +10,7 @@ namespace api.Services
         {
             ["home"] = new { Title = "Home" },
             ["factorial"] = new { Title = "N!" },
-            ["fibonnaci"] = new { Title = "Fib(n)" },
+            ["fibonacci"] = new { Title = "Fib(n)" },
             ["randomSquare"] = new { Title = "Random square" }
         };
     }

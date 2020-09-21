@@ -15,7 +15,7 @@ describe('Test Random Square Page', () => {
         cy.get('div[id="result"]').should('have.value', '')
         cy.get('p').contains('User inputs a number (n) in a textbox, then clicks a button to calculate Fib(n) via a corresponding API call. Then the correct result is displayed on the page.')
 
-        cy.get('input[id="randomSquare_input"]').type(1).should('have.value', '01')
+        cy.get('input[id="randomSquare_input"]').type('01').should('have.value', '01')
         cy.get('button').contains('Calculate').click()
         cy.get('div[id="result"]').contains('0')
 

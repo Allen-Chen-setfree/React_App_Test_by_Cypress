@@ -1,5 +1,5 @@
 
-# QA code task (technical role)
+# QA code task 
 
 The application consists of two projects - UI (React SPA) and API (ASP.Net Core).
 
@@ -56,8 +56,12 @@ REST endpoints that are used in the UI have been implemented.
 - `yarn start` - this will start ui (port 3000) and api  (port 3001)
 
 
-## How to submit
+## How to run test
 
-Clone the repo and make the changes. Push the changes to your github and share the link to the repository with us. Make sure the the repository is publicly accessible.
+- API test<br/>
+  `dotnet test` - under directory .\api\tests
 
-Note: Please do not fork the repository or submit a pull request to this project.
+- UI test<br/>
+  `yarn run cypress open` - under directory .\ui
+
+
